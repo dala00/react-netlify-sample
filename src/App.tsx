@@ -1,8 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import logo from './logo.svg'
+import './App.css'
 
 const App: React.FC = () => {
+  const [count, setCount] = useState(1)
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,9 +20,13 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
+        <div>{count}</div>
+        <div>
+          <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
